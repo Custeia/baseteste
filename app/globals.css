@@ -1,0 +1,631 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Sistema de Responsividade Avançado para Desktop e Mobile */
+@layer utilities {
+  /* Container Principal - Otimizado para Desktop */
+  .container-main {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .container-main {
+      padding: 0 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container-main {
+      padding: 0 2rem;
+      max-width: 1400px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .container-main {
+      padding: 0 3rem;
+      max-width: 1600px;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .container-main {
+      padding: 0 4rem;
+      max-width: 1920px;
+    }
+  }
+
+  /* Tipografia Responsiva */
+  .text-responsive-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  .text-responsive-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .text-responsive-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .text-responsive-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .text-responsive-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .text-responsive-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .text-responsive-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .text-responsive-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    .text-responsive-xs {
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+    }
+
+    .text-responsive-sm {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+
+    .text-responsive-base {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+    }
+
+    .text-responsive-lg {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+    }
+
+    .text-responsive-xl {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+
+    .text-responsive-2xl {
+      font-size: 1.875rem;
+      line-height: 2.25rem;
+    }
+
+    .text-responsive-3xl {
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+    }
+
+    .text-responsive-4xl {
+      font-size: 3rem;
+      line-height: 1;
+    }
+  }
+
+  /* Grid Responsivo */
+  .grid-responsive-1 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .grid-responsive-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .grid-responsive-3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .grid-responsive-4 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .grid-responsive-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-responsive-3 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-responsive-4 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .grid-responsive-2 {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .grid-responsive-3 {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .grid-responsive-4 {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .grid-responsive-2 {
+      gap: 2rem;
+    }
+
+    .grid-responsive-3 {
+      gap: 2rem;
+    }
+
+    .grid-responsive-4 {
+      gap: 2rem;
+    }
+  }
+
+  /* Cards Responsivos */
+  .grid-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .grid-cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .grid-cards {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .grid-cards {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+  }
+
+  /* Formulários Responsivos */
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .form-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .form-grid {
+      gap: 1.5rem;
+    }
+  }
+
+  /* Componentes Responsivos */
+  .input-responsive {
+    height: 2.5rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+  }
+
+  @media (min-width: 1024px) {
+    .input-responsive {
+      height: 3rem;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+    }
+  }
+
+  .button-responsive {
+    height: 2.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  @media (min-width: 1024px) {
+    .button-responsive {
+      height: 3rem;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+    }
+  }
+
+  .card-responsive {
+    padding: 1rem;
+    border-radius: 0.75rem;
+  }
+
+  @media (min-width: 1024px) {
+    .card-responsive {
+      padding: 1.5rem;
+      border-radius: 1rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .card-responsive {
+      padding: 2rem;
+    }
+  }
+
+  /* Espaçamento Responsivo */
+  .spacing-responsive {
+    padding: 1rem;
+  }
+
+  @media (min-width: 1024px) {
+    .spacing-responsive {
+      padding: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .spacing-responsive {
+      padding: 2rem;
+    }
+  }
+
+  /* Layout Principal */
+  .layout-main {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  }
+
+  .content-wrapper {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+
+  @media (min-width: 1024px) {
+    .content-wrapper {
+      padding: 2rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .content-wrapper {
+      padding: 3rem;
+    }
+  }
+
+  /* Tabelas Responsivas */
+  .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table-responsive table {
+    min-width: 600px;
+    width: 100%;
+  }
+
+  @media (min-width: 1024px) {
+    .table-responsive table {
+      min-width: 100%;
+    }
+  }
+
+  /* Menu Responsivo */
+  .menu-responsive {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .menu-responsive {
+      flex-direction: row;
+      gap: 0;
+    }
+  }
+
+  /* Sombras Responsivas */
+  .shadow-responsive {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  }
+
+  @media (min-width: 1024px) {
+    .shadow-responsive {
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+  }
+
+  .shadow-responsive-lg {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+
+  @media (min-width: 1024px) {
+    .shadow-responsive-lg {
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+  }
+
+  /* Animações */
+  .animate-responsive {
+    transition: all 0.2s ease-in-out;
+  }
+
+  @media (min-width: 1024px) {
+    .animate-responsive {
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  /* Estados de Hover para Desktop */
+  @media (min-width: 1024px) {
+    .hover-scale:hover {
+      transform: scale(1.02);
+    }
+
+    .hover-shadow:hover {
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+  }
+
+  /* Melhorias específicas para Desktop */
+  @media (min-width: 1024px) {
+    .desktop-enhanced {
+      backdrop-filter: blur(8px);
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    .desktop-spacing {
+      margin: 2rem 0;
+    }
+
+    .desktop-padding {
+      padding: 2rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .desktop-spacing {
+      margin: 3rem 0;
+    }
+
+    .desktop-padding {
+      padding: 3rem;
+    }
+  }
+
+  /* Otimizações para telas grandes */
+  @media (min-width: 1536px) {
+    .xl-container {
+      max-width: 1800px;
+      margin: 0 auto;
+    }
+
+    .xl-spacing {
+      padding: 4rem;
+    }
+
+    .xl-gap {
+      gap: 3rem;
+    }
+  }
+}
+
+/* Componentes específicos */
+@layer components {
+  .restaurant-card {
+    @apply card-responsive shadow-responsive animate-responsive;
+    @apply bg-gradient-to-br from-white to-gray-50;
+    @apply border-2 border-transparent hover:border-blue-200;
+    @apply cursor-pointer transition-all duration-300;
+  }
+
+  @media (min-width: 1024px) {
+    .restaurant-card:hover {
+      @apply shadow-responsive-lg hover-scale;
+    }
+  }
+
+  .form-section {
+    @apply space-y-4;
+  }
+
+  @media (min-width: 1024px) {
+    .form-section {
+      @apply space-y-6;
+    }
+  }
+
+  .stats-grid {
+    @apply grid-cards;
+  }
+
+  .menu-item-responsive {
+    @apply flex-shrink-0;
+  }
+
+  @media (min-width: 640px) {
+    .menu-item-responsive {
+      @apply flex-shrink;
+    }
+  }
+
+  /* Cards de estatísticas */
+  .stat-card {
+    @apply card-responsive border-2 shadow-responsive;
+    @apply bg-gradient-to-br from-white to-gray-50;
+    @apply transition-all duration-200;
+  }
+
+  @media (min-width: 1024px) {
+    .stat-card:hover {
+      @apply shadow-responsive-lg transform scale-105;
+    }
+  }
+
+  /* Indicadores de tendência */
+  .trend-indicator {
+    @apply inline-flex items-center gap-1 text-sm font-medium;
+  }
+
+  .trend-indicator.up {
+    @apply text-green-600;
+  }
+
+  .trend-indicator.down {
+    @apply text-red-600;
+  }
+
+  .trend-indicator.neutral {
+    @apply text-gray-600;
+  }
+}
+
+/* Animações específicas */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-slide-up {
+  animation: slideInUp 0.5s ease-out;
+}
+
+.animate-fade-scale {
+  animation: fadeInScale 0.3s ease-out;
+}
+
+/* Melhorias para modais em desktop */
+@media (min-width: 1024px) {
+  .modal-desktop {
+    @apply max-w-4xl;
+  }
+}
+
+@media (min-width: 1280px) {
+  .modal-desktop {
+    @apply max-w-5xl;
+  }
+}
+
+@media (min-width: 1536px) {
+  .modal-desktop {
+    @apply max-w-6xl;
+  }
+}
